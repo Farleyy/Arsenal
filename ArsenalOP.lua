@@ -4,11 +4,11 @@ local toggles={abk=Enum.UserInputType.MouseButton2;iag=false;};local traced={};l
 local visuals = library:CreateWindow('Private Arsenal');
 local combat = library:CreateWindow('Rage Only');
 visuals:Toggle('Tracers', {location = toggles,flag = "tracers"})
-visuals:Section('ESP');
+
 visuals:Toggle('Name ESP' ,{location = toggles ,flag = "nESP"});
 visuals:Toggle('Head ESP' ,{location = toggles ,flag = "hESP"});
 combat:Toggle('Silent Aim',{location=toggles,flag='silent'});
-combat:Section('Aimbot')
+
 combat:Toggle('Aimbot',{location=toggles,flag='aimbot'});
 combat:Bind('Aimbot key', {location=toggles, flag='abk', kbonly=false, default=Enum.UserInputType.MouseButton2},
 function(k,b)
@@ -17,7 +17,7 @@ end);
 combat:Section('General');
 combat:Dropdown('Aim part', {location=toggles,flag='abp', list={"Head","UpperTorso"}});
 combat:Toggle('Show FOV', {location=toggles, flag='showfov'})
-combat:Slider('FOV', {location=toggles, flag='fov', precise=false, default=100, min=30, max=500});
+combat:Slider('FOV', {location=toggles, flag='fov', precise=false, default=100, min=30, max=1000});
 function createline()
 	local a=Drawing.new("Line");a.Thickness=1.5;a.Transparency=1;a.Visible=true;a.Color=Color3.fromRGB(0, 255, 149);
     a.From=tsp;
