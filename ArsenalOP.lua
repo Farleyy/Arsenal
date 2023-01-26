@@ -6,7 +6,6 @@ local combat = library:CreateWindow('Rage Only');
 visuals:Toggle('Tracers', {location = toggles,flag = "tracers"})
 visuals:Toggle('Name ESP' ,{location = toggles ,flag = "nESP"});
 visuals:Toggle('Head ESP' ,{location = toggles ,flag = "hESP"});
-visuals:Toggle('Rainbow Gun',{location = toggles,flag = 'rb'})
 combat:Toggle('Silent Aim',{location=toggles,flag='silent'});
 combat:Toggle('Aimbot',{location=toggles,flag='aimbot'});
 combat:Bind('Aimbot key', {location=toggles, flag='abk', kbonly=false, default=Enum.UserInputType.MouseButton2},
@@ -139,25 +138,6 @@ run.Stepped:Connect(function()
     end);   
 end);    
 
-spawn(function()
-    if toggles.rb then
-      
-        local c = 1
-        function zigzag(X)
-         return math.acos(math.cos(X * math.pi)) / math.pi
-        end
-        game:GetService("RunService").RenderStepped:Connect(function()
-         if game.Workspace.Camera:FindFirstChild('Arms') then
-          for i,v in pairs(game.Workspace.Camera.Arms:GetDescendants()) do
-           if v.ClassName == 'MeshPart' then 
-            v.Color = Color3.fromHSV(zigzag(c),1,1)
-            c = c + .0001
-           end
-          end
-         end
-        end)
-    end;    
-end);   
 
 
 
