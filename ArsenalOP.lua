@@ -140,7 +140,7 @@ run.Stepped:Connect(function()
 end);    
 
 spawn(function()
-    if toggles.rb and toggles.rb then
+    if toggles.rb then
       
         local c = 1
         function zigzag(X)
